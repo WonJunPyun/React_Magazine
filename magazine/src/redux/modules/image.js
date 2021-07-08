@@ -9,7 +9,6 @@ const initialState = {
   preview: null,
 };
 
-
 export default handleActions(
   {
     [SET_PREVIEW]: (state, action) =>

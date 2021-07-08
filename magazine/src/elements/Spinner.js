@@ -14,7 +14,7 @@ const Spinner = (props) => {
 };
 
 Spinner.defaultProps = {
-  type: "inline", // inline, page
+  type: "inline", 
   is_dim: false,
   size: 60,
 };
@@ -37,8 +37,8 @@ const SpinnerWrap = styled.div`
   ${(props) =>
     props.is_dim
       ? `
-    background: rgba(0,0,0,0.4); 
-    height: 100vh;
+     background: rgba(0,0,0,0.4); 
+     height: 100vh;
   `
       : ``}
 `;

@@ -14,7 +14,6 @@ const PostDetail = (props) => {
   const post = post_list[post_idx];
 
   React.useEffect(() => {
-
     if (post) {
       return;
     }

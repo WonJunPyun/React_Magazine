@@ -11,7 +11,6 @@ const PostWrite = (props) => {
   const is_login = useSelector((state) => state.user.is_login);
   const preview = useSelector((state) => state.image.preview);
   const post_list = useSelector((state) => state.post.list);
-
   const post_id = props.match.params.id;
   const is_edit = post_id ? true : false;
 
@@ -28,7 +27,7 @@ const PostWrite = (props) => {
 
   React.useEffect(() => {
     if (is_edit && !_post) {
-      window.alert("포스트 정보가 없습니다");
+      window.alert("포스트에 정보가 없습니다");
       history.goBack();
 
       return;
@@ -38,7 +37,6 @@ const PostWrite = (props) => {
       dispatch(imageActions.setPreview(_post.image_url));
     }
   }, []);
-
 
   const changeContents = (e) => {
     setContents(e.target.value);
@@ -62,13 +60,13 @@ const PostWrite = (props) => {
         <Text size="32px" bold>
           앗! 잠깐!
         </Text>
-        <Text size="16px">로그인 후에만 글을 작성 할 수 있어요!</Text>
+        <Text size="16px">로그인 후에만 글을 작성 할 수 있습니다</Text>
         <Button
           _onClick={() => {
             history.replace("/");
           }}
         >
-          로그인 ㄱㄱ 하기
+          로그인 하러가기
         </Button>
       </Grid>
     );
@@ -78,7 +76,7 @@ const PostWrite = (props) => {
     <React.Fragment>
       <Grid padding="16px">
         <Text margin="0px" size="36px" bold>
-          {is_edit ? "게시글 수정하기" : "게시글 작성하기"}
+          {is_edit ? "게시글 수정" : "게시글 작성"}
         </Text>
         <Upload />
       </Grid>
@@ -101,7 +99,7 @@ const PostWrite = (props) => {
           value={contents}
           _onChange={changeContents}
           label="게시글 내용"
-          placeholder="게시글 작성하기"
+          placeholder="게시글 작성"
           multiLine
         />
       </Grid>
@@ -111,16 +109,16 @@ const PostWrite = (props) => {
           type="text"
           value={layout_type}
           _onChange={changeLayoutType}
-          label="layout 타입"
-          placeholder="a, b, c 중 하나를 선택해주세요."
+          label="레이아웃 타입"
+          placeholder="a, b, c 중 하나를 골라주세요."
         />
       </Grid>
 
       <Grid padding="16px">
         {is_edit ? (
-          <Button _onClick={editPost}>게시글 수정하기</Button>
+          <Button _onClick={editPost}>게시글 수정</Button>
         ) : (
-          <Button _onClick={addPost}>게시글 작성하기</Button>
+          <Button _onClick={addPost}>게시글 작성</Button>
         )}
       </Grid>
     </React.Fragment>

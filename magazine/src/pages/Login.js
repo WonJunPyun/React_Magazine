@@ -14,12 +14,12 @@ const Login = (props) => {
 
   const login = () => {
     if (id === "" || pwd === "") {
-      window.alert("아이디 혹은 비밀번호가 빈칸입니다! 꼭 입력해주세요!");
+      window.alert("아이디 혹은 비밀번호가 확인되지 않습니다 다시 확인 해주세요");
       return;
     }
 
     if (!emailCheck(id)) {
-      window.alert("이메일 형식이 맞지 않습니다 다시 입력하세요!");
+      window.alert("이메일 형식이 맞지 않습니다!");
       return;
     }
 

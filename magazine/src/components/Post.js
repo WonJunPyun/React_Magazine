@@ -42,7 +42,6 @@ const Post = React.memo((props) => {
                     e.preventDefault();
                     e.stopPropagation();
 
-
                     dispatch(postActions.deletePostFB(props.id));
                   }}
                 >
@@ -91,7 +90,14 @@ const Post = React.memo((props) => {
             좋아요 {props.like_cnt}개
           </Text>
 
-          <HeartButton></HeartButton>
+          <HeartButton
+            _onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              dispatch(postActions.toggleLikeFB(props.id));
+            }}
+            is_like={props.is_like}
+          ></HeartButton>
         </Grid>
       </Grid>
     </React.Fragment>
@@ -103,13 +109,14 @@ Post.defaultProps = {
   user_info: {
     user_id: "onejun",
     user_name: "onejun",
-    user_profile: "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FvpojB%2FbtqSXjVkHFI%2FNWCgx8ztHgm9hHEh8G6L8K%2Fimg.jpg",
+    user_profile: "https://postfiles.pstatic.net/MjAyMDA4MDNfMjA2/MDAxNTk2NDUwMjczMjU4.tlCpZBIPYz4sJSwedJjJPgTdiSZCW0KN_9gxxu6OF9Eg.eI1o5A3dq8uApOK_a9cRPlwlTDCNOO5ZyFHVnAJX0QEg.JPEG.dmsthf572/IMG_8780.JPG?type=w580",
   },
-  image_url: "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FvpojB%2FbtqSXjVkHFI%2FNWCgx8ztHgm9hHEh8G6L8K%2Fimg.jpg",
-  contents: "루피 입니다!",
-  like_cnt: 10,
+  image_url: "https://postfiles.pstatic.net/MjAyMDA4MDNfMjA2/MDAxNTk2NDUwMjczMjU4.tlCpZBIPYz4sJSwedJjJPgTdiSZCW0KN_9gxxu6OF9Eg.eI1o5A3dq8uApOK_a9cRPlwlTDCNOO5ZyFHVnAJX0QEg.JPEG.dmsthf572/IMG_8780.JPG?type=w580",
+  contents: "기도하는 루피입니다",
+  like_cnt: 0,
   layout_type: "a",
   insert_dt: "2021-02-26 10:00:00",
+  is_like: false,
   is_me: false,
 };
 

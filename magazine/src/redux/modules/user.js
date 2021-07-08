@@ -4,22 +4,19 @@ import { produce } from "immer";
 import { auth } from "../../shared/firebase";
 import firebase from "firebase/app";
 
-//actions
 const LOG_OUT = "LOG_OUT";
 const GET_USER = "GET_USER";
 const SET_USER = "SET_USER";
 
-//aciton creators
 const logOut = createAction(LOG_OUT, (user) => ({ user }));
 const getUser = createAction(GET_USER, (user) => ({ user }));
 const setUser = createAction(SET_USER, (user) => ({ user }));
-//intialState
+
 const initialState = {
   user: null,
   is_login: false,
 };
 
-//middleware actions
 const loginFB = (id, pwd) => {
   return function (dispatch, getState, { history }) {
     auth.setPersistence(firebase.auth.Auth.Persistence.SESSION).then((res) => {
@@ -34,8 +31,7 @@ const loginFB = (id, pwd) => {
               uid: user.user.uid,
             })
           );
-
-          history.push("/");
+          window.location.href = "/";
         })
         .catch((error) => {
           window.alert("로그인 실패!");
@@ -84,7 +80,6 @@ const signupFB = (id, pwd, user_name) => {
   };
 };
 
-
 const loginCheckFB = () => {
   return function (dispatch, getState, { history }) {
     auth.onAuthStateChanged((user) => {
@@ -113,7 +108,6 @@ const logoutFB = () => {
   };
 };
 
-// reducer
 export default handleActions(
   {
     [SET_USER]: (state, action) =>

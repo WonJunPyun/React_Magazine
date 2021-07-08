@@ -10,9 +10,7 @@ const Upload = (props) => {
   const selectFile = (e) => {
     const reader = new FileReader();
     const file = fileInput.current.files[0];
-
     reader.readAsDataURL(file);
-
     reader.onloadend = () => {
       dispatch(imageActions.setPreview(reader.result));
     };

@@ -16,17 +16,17 @@ const Signup = (props) => {
 
   const signup = () => {
     if (id === "" || pwd === "" || pwd_check === "" || user_name === "") {
-      window.alert("아이디, 패스워드, 닉네임을 모두 입력 부탁드립니다 다시 확인 부탁드립니다.");
+      window.alert("아이디, 패스워드, 닉네임을 모두 입력 부탁드립니다");
       return;
     }
 
     if (!emailCheck(id)) {
-      window.alert("이메일 형식이 맞지 않습니다");
+      window.alert("이메일 형식이 맞지 않습니다!");
       return;
     }
 
     if (pwd !== pwd_check) {
-      window.alert("패스워드와 패스워드 확인이 일치하지 않습니다!");
+      window.alert("패스워드와 패스워드 확인이 동일하지 않습니다");
       return;
     }
 
@@ -42,7 +42,7 @@ const Signup = (props) => {
         <Grid padding="16px 0px">
           <Input
             label="아이디"
-            placeholder="아이디를 입력해주세요!."
+            placeholder="아이디를 입력해주세요."
             _onChange={(e) => {
               setId(e.target.value);
             }}
@@ -52,7 +52,7 @@ const Signup = (props) => {
         <Grid padding="16px 0px">
           <Input
             label="닉네임"
-            placeholder="닉네임을 입력해주세요!"
+            placeholder="닉네임을 입력해주세요."
             _onChange={(e) => {
               setUserName(e.target.value);
             }}
@@ -63,7 +63,7 @@ const Signup = (props) => {
           <Input
             label="비밀번호"
             type="password"
-            placeholder="비밀번호를 입력해주세요!"
+            placeholder="비밀번호를 입력해주세요."
             _onChange={(e) => {
               setPwd(e.target.value);
             }}
@@ -74,7 +74,7 @@ const Signup = (props) => {
           <Input
             label="비밀번호 확인"
             type="password"
-            placeholder="비밀번호를 다시 입력해주세요!"
+            placeholder="비밀번호를 다시 입력해주세요."
             _onChange={(e) => {
               setPwdCheck(e.target.value);
             }}

@@ -1,20 +1,14 @@
 import "./App.css";
 import React from "react";
-
 import { ConnectedRouter } from "connected-react-router";
 import { history } from "../redux/configureStore";
-
 import { Login, Signup, PostDetail, PostList, PostWrite } from "../pages";
-
 import {Header} from "../components";
 import { Grid, Button } from "../elements";
-
 import { useDispatch } from "react-redux";
 import { actionCreators as userActions } from "../redux/modules/user";
-
 import { apiKey } from "./firebase";
 import { Route } from "react-router-dom";
-
 import Permit from "./Permit";
 
 function App() {

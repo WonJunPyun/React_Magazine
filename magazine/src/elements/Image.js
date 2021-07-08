@@ -4,7 +4,10 @@ import React from "react";
 const Image = (props) => {
   const { shape, src, size } = props;
 
-  const styles = {src: src, size: size,};
+  const styles = {
+    src: src,
+    size: size,
+  };
 
   if (shape === "circle") {
     return <ImageCircle {...styles}></ImageCircle>;
@@ -27,7 +30,7 @@ const Image = (props) => {
 
 Image.defaultProps = {
   shape: "circle",
-  src: "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FvpojB%2FbtqSXjVkHFI%2FNWCgx8ztHgm9hHEh8G6L8K%2Fimg.jpg",
+  src: "https://postfiles.pstatic.net/MjAyMDA4MDNfMjA2/MDAxNTk2NDUwMjczMjU4.tlCpZBIPYz4sJSwedJjJPgTdiSZCW0KN_9gxxu6OF9Eg.eI1o5A3dq8uApOK_a9cRPlwlTDCNOO5ZyFHVnAJX0QEg.JPEG.dmsthf572/IMG_8780.JPG?type=w580",
   size: 36,
 };
 

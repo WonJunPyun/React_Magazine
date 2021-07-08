@@ -4,8 +4,6 @@ import styled from "styled-components";
 
 const Button = (props) => {
   const { _onClick, is_float, children, margin, width, padding } = props;
-
-
   if (is_float) {
     return (
       <React.Fragment>
@@ -13,7 +11,6 @@ const Button = (props) => {
       </React.Fragment>
     );
   }
-
   const styles = {
     margin: margin,
     width: width,

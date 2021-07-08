@@ -4,17 +4,7 @@ import styled from "styled-components";
 import { Text, Grid } from "./index";
 
 const Input = (props) => {
-  const {
-    label,
-    placeholder,
-    _onChange,
-    type,
-    multiLine,
-    value,
-    is_submit,
-    onSubmit,
-  } = props;
-
+  const {label,placeholder,_onChange,type,multiLine,value,is_submit,onSubmit,} = props;
   if (multiLine) {
     return (
       <Grid>
@@ -56,7 +46,7 @@ const Input = (props) => {
 Input.defaultProps = {
   multiLine: false,
   label: false,
-  placeholder: "텍스트 입력해주세요.",
+  placeholder: "텍스트를 입력 부탁드립니다",
   type: "text",
   value: "",
   is_submit: false,

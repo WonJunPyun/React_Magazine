@@ -2,18 +2,13 @@ import React from "react";
 import _ from "lodash";
 import { Spinner } from "../elements";
 
-
 const InfinityScroll = (props) => {
   const { children, callNext, is_next, loading } = props;
-
-
   const _handleScroll = _.throttle(() => {
-
 
     if (loading) {
       return;
     }
-
     const { innerHeight } = window;
     const { scrollHeight } = document.body;
 
@@ -32,7 +27,6 @@ const InfinityScroll = (props) => {
     if (loading) {
       return;
     }
-
     if (is_next) {
       window.addEventListener("scroll", handleScroll);
     } else {
